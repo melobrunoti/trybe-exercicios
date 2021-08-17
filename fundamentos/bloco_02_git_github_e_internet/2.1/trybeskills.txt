@@ -2,13 +2,8 @@ O que eu vou aprender na Trybe:
 
 - Unix
 - Bash
-trybe-skills-updates
-
-- GIt
-
 - Soft Skills
-=======
 - Git
 - HTML
 - CSS
-master
+
