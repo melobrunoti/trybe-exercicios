@@ -17,9 +17,6 @@ for (let i = 0; i < position ; i++) {
     else if(j == positionLeft || j == positionRight){
         asteriscos += '*';
     }
-    else if(j == positionLeft || j == positionRight){
-        asteriscos += '*';
-    }
     else{
         asteriscos += ' ';
     }
