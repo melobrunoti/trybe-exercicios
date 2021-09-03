@@ -55,7 +55,33 @@
           colorGreen.style.backgroundColor = "rgb(76,164,109)";
         }
         changeColor();
+
+        function changeCenterColor() {
+          let colorWhite = document.getElementsByClassName("center-content")[0];
+          colorWhite.style.backgroundColor = "white"
+        }
+        changeCenterColor();
         
+        function fixh1() {
+          let h1text = document.getElementsByTagName('h1')[0];
+          h1text.innerText = "Exercicio 5.1 - JavaScript"
+        }
+        fixh1()
+
+         function upperCase() {
+           let upper = document.getElementsByTagName('p')[0];
+           upper.style.textTransform = 'uppercase'
+         }
+         upperCase()
+
+         function showMeEverything() {
+          let paragraph = document.getElementsByTagName('p');
+
+          for (let i = 0; i < paragraph.length; i+= 1) {
+            console.log(paragraph[i].innerHTML) 
+          }
+         }
+         showMeEverything()
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
