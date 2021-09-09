@@ -25,12 +25,12 @@ function createDaysOfTheMonth(){
     const days = dezDaysList[index]
     const daysList = document.createElement('li');
    
-    if(days === 24 || 31){
-      daysList.className = 'holiday'
+    if(days === 24 || days === 31){
+      daysList.className = 'day holiday'
       daysList.innerHTML = days;
       daysElement.appendChild(daysList)
     }
-      else if(days === 4 || 11 || 18){
+      else if(days === 4 || days === 11 || days === 18){
       daysList.className = 'day friday'
       daysList.innerHTML = days;
       daysElement.appendChild(daysList)
@@ -40,7 +40,7 @@ function createDaysOfTheMonth(){
       daysList.innerHTML = days;
       daysElement.appendChild(daysList)
     }
-      else{
+      else {
       daysList.className = 'day'
       daysList.innerHTML = days;
       daysElement.appendChild(daysList)
@@ -48,20 +48,39 @@ function createDaysOfTheMonth(){
 
   }
 }
-createDaysOfTheMonth();
 
-function holidays(button){
+
+createDaysOfTheMonth();
 let buttonID = 'btn-holiday'
 let newButton = document.createElement('button')
 let buttonContainer = document.querySelector('.buttons-container')
-
+function holidays(button){
+  
 newButton.innerHTML = button;
 newButton.id = buttonID;
-
 buttonContainer.appendChild(newButton)
-
-
 
 
 }
 holidays('Feriados!')
+
+function paintHolidays (){
+let holidayElements = document.querySelectorAll('.holiday')
+let getButton = document.querySelector('#btn-holiday')
+let originalColor = 'rgb(238,238,238)'
+let newColor = 'red'
+
+getButton.addEventListener('click', function() {
+  for (let index = 0; index < holidayElements.length; index++) {
+    if(holidayElements[index].style.backgroundColor === newColor){
+    holidayElements[index].style.backgroundColor = originalColor
+    } else{
+      holidayElements[index].style.backgroundColor = newColor
+    }
+  }
+})
+  
+}
+paintHolidays();
+
+
