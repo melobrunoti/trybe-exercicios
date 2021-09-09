@@ -152,3 +152,18 @@ function cores(cor){
   
   }
   cores('green')
+
+  function taskClass(){
+    let taskSelected = document.getElementsByClassName('task selected')
+    let getTask = document.querySelector('.task')
+
+    getTask.addEventListener('click', function(event) {
+      if (taskSelected.length === 0) {
+        event.target.className = 'task selected';
+      } else {
+        event.target.className = 'task';
+  }
+})
+}
+taskClass()
+
