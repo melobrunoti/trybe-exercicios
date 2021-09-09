@@ -114,4 +114,41 @@ function sextou(frydays){
 }
 sextou([4,11,18,25])
 
+function mouseOver(){
+  let day = document.querySelector('#days')
 
+  day.addEventListener('mouseover', function(event){
+    event.target.style.fontSize = '30px';
+  })
+}
+
+function mouseOut(){
+  let day = document.querySelector('#days')
+
+  day.addEventListener('mouseout', function(event){
+    event.target.style.fontSize = '20px';
+  })
+}
+mouseOver();
+mouseOut();
+
+function tasks(task){
+  let getTask = document.querySelector('.my-tasks')
+  let taskName = document.createElement('span') 
+  
+  taskName.innerHTML = task;
+  getTask.appendChild(taskName)
+}
+tasks('Exercicios')
+
+function cores(cor){
+  let newColor = document.createElement('div')
+  let taskDiv = document.querySelector('.my-tasks')
+  newColor.classList = 'task'
+  
+  
+  newColor.style.backgroundColor = cor
+  taskDiv.appendChild(newColor)
+  
+  }
+  cores('green')
