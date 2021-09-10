@@ -167,3 +167,23 @@ function cores(cor){
 }
 taskClass()
 
+
+function Paint(){
+  let day = document.querySelector('#days')
+  let taskSelected = document.getElementsByClassName('task selected')
+  let tasks = document.querySelector('.task');
+  let taskColor = tasks.style.backgroundColor;
+
+  day.addEventListener('click', function(event){
+  let eventColor = event.target.style.color;
+  if(taskSelected.length > 0 && eventColor !== taskColor) {
+  let color = taskSelected[0].style.backgroundColor
+  event.target.style.color = color;
+  } else if(eventColor === taskColor && taskColor !== 0 ){
+  event.target.style.color = 'rgb(119,119,119)';
+}
+  })
+}
+Paint()
+
+
