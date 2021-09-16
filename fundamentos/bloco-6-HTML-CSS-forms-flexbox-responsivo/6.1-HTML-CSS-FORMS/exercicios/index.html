@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="" method="GET">
+  <fieldset >
+    <legend>Informacoes Pessoais</legend>
+    <label for="name-field">Name</label>
+    <input maxlength="40" type="text" id="name-field" name="name" required>
+    <br>
+    <label for="email-field">E-mail</label>
+    <input type="email" maxlength="50" name="email" id="email-field" required>
+    <br>
+    <label for="cpf-field">CPF</label>
+    <input type="text" maxlength="11" id="cpf-field" name="cpf" required> 
+    <br>
+    <label for="adress-field">Endereço</label>
+    <input type="text" maxlength="200" id="adress-field" name="adress">
+    <br>
+    <label for="city-field">Cidade</label>
+    <input type="text" name="city" maxlength="28" id="city-field" required>
+    <br>
+    <label for="state-field">Etado</label>
+    <select name="state" id="state-field" required>
+     
+    </select>
+    <br>
+    <label for="casa-field">Casa</label>
+    <input type="radio" name="casa-ap" id="casa-field" required >
+    <label for="casa-field">Apartamento</label>
+    <input type="radio" name="casa-ap" id="apartamento-field" required>
+  </fieldset>
+  <fieldset>
+    <legend>Ultimo emprego</legend>
+    <label for="abstract-resume-field">Resumo do Curriculum</label>
+    <br>
+    <textarea name="abstract-resume" maxlength="1000" id="abstract-resume-field" cols="30" rows="10" required></textarea>
+    <br>
+    <label for="function-field">Cargo</label>
+    <input type="text" id="function-field" name="function" required maxlength="40">
+    <br>
+    <label for="description-field">Descricao do Cargo</label>
+    <input type="text" id="description-field" name="description" required maxlength="500">
+    <br>
+    <label for="date-field">Data de Inicio</label>
+    <input type="text" id="initial-date-field" placeholder="DD/MM/YYYY" name="initial-date">
+    <br>
+    <button type="submit" id="send-button">Enviar</button>
+
+  </fieldset>
+  
+</form> 
+  <script src="script.js"> </script>
+</body>
+</html>
+
+
