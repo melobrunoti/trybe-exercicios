@@ -1,0 +1,79 @@
+body {
+font-size: x-large;
+margin: 5%;
+
+}
+h1 {
+font-size: 30px;
+text-align: center;
+}
+
+h2 {
+font-size: 25px;
+
+}
+
+figcaption {
+  margin-bottom: 5%;
+}
+img {
+    max-width: 100%;   
+    margin-bottom: 10%;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+ 
+
+}
+figure {
+    margin: 0;
+   
+}
+
+@media screen and (min-width:  520px) {
+  body {
+    background-color: rgb(179, 197, 197);
+    font-size: 20px
+
+    
+  }
+   
+  figure {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    align-self: center;
+    width: 42%;
+    padding: 3%;
+    text-align: center;
+    margin: 10;
+    
+  }
+
+  figure:nth-child(5) {
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+}
+
+@media screen and (min-width: 1050px) {
+  body {
+    background: rgba(0, 81, 255, 0.2);
+    margin: 30px;
+    max-width: 1050px
+  }
+
+  figure {
+    width: 40%;
+  }
+}
