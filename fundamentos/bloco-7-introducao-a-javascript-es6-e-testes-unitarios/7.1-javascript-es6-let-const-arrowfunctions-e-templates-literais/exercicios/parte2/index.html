@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <button id=buttonTest>button</button>
+
+  <span id="text"></span>
+
+  <script>
+
+let button = document.getElementById('buttonTest')
+let clicks = document.getElementById('text')
+let count = 0
+
+
+
+
+button.addEventListener('click', () => clicks.innerHTML = count += 1)
+
+  </script>
+</body>
+</html>
