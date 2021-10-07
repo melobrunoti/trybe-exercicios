@@ -70,5 +70,5 @@ function authorWith3DotsOnName() {
   book.author.name.split(' ').filter((dots) => dots.endsWith('.')).length === 3)).name;
 }
 
-console.log(authorWith3DotsOnName().split(' '))
-/* assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult); */
+console.log(authorWith3DotsOnName())
+assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
