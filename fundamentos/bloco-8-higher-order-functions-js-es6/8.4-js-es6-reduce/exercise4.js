@@ -61,15 +61,24 @@ const books = [
   },
 ];
 
-const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
-function reduceNames() {
-  return books.reduce((acc,curr,index,array) => {
-    if (index === array.length - 1){
-      return `${acc} ${curr.author.name}.`
-    }
-    return  `${acc} ${curr.author.name},`
-  },'').trim()
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
+ return books.reduce((acc, curr) => {
+   if( acc.name.length < curr.name.length){
+     acc.name = curr.name
+   }
+   return acc
+ })
 }
-
-console.log(reduceNames())
+console.log(longestNamedBook())
