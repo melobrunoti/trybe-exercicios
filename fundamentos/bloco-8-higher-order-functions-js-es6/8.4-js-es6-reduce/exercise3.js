@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 const books = [
   {
     id: 1,
@@ -63,12 +61,14 @@ const books = [
   },
 ];
 
-const expectedResult = 'O Senhor dos Anéis';
+const expectedResult = 43;
 
-function authorWith3DotsOnName() {
-  return books.find((book) => (
-  book.author.name.split(' ').filter((dots) => dots.endsWith('.')).length === 3)).name;
+function averageAge() {
+  const totalAge =  books.reduce((acc,curr)=>  acc + (curr.releaseYear - curr.author.birthYear) , 0)
+
+  return totalAge/books.length
+
 }
 
-console.log(authorWith3DotsOnName())
-assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
+console.log(averageAge())
+

@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 const books = [
   {
     id: 1,
@@ -63,12 +61,24 @@ const books = [
   },
 ];
 
-const expectedResult = 'O Senhor dos Anéis';
 
-function authorWith3DotsOnName() {
-  return books.find((book) => (
-  book.author.name.split(' ').filter((dots) => dots.endsWith('.')).length === 3)).name;
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
+ return books.reduce((acc, curr) => {
+   if( acc.name.length < curr.name.length){
+     acc.name = curr.name
+   }
+   return acc
+ })
 }
-
-console.log(authorWith3DotsOnName())
-assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
+console.log(longestNamedBook())
