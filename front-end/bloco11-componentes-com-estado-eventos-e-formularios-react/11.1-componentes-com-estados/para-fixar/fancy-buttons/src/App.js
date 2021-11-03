@@ -1,26 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function handleClick1(){
-  console.log('clicou no botao 1')
-}
 
-function handleClick2(){
-  console.log('clicou no botao 2')
-}
+class App extends React.Component {
+  constructor(){
+    super()
+    this.handleClick1 = this.handleClick1.bind(this)
+  }
 
-function handleClick3(){
-  console.log('clicou no botao 3')
-}
+ handleClick1(){
+    console.log(this);
+    console.log('clicou no botao 1')
+  }
 
-function App() {
+  render(){
   return (
     <div className="App">
-      <button onClick={handleClick1}>Button - 1</button>
-      <button onClick={handleClick2}>Button - 2</button>
-      <button onClick={handleClick3}>Button - 3</button>
+      <button onClick={this.handleClick1}>Button - 1</button>
+
     </div>
   );
+}
 }
 
 export default App;
