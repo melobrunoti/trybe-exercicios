@@ -23,15 +23,32 @@ class App extends React.Component {
 
   handleClick2(){
     this.setState((estadoAtual, _props)=>({
-      numeroDeCliques2:   estadoAtual.numeroDeCliques2 + 1
+      numeroDeCliques2:   estadoAtual.numeroDeCliques2 + 1,
+      
     }))
+
+    
+  }
+  getButtonColor(num) {
+    return num % 2 === 0 ? 'green' : "red"
   }
 
+  
   render(){
+    const {numeroDeCliques, numeroDeCliques2} = this.state
   return (
     <div className="App">
-      <button onClick={this.handleClick1}>{this.state.numeroDeCliques}</button>
-      <button onClick={this.handleClick2}>{this.state.numeroDeCliques2}</button>
+      <button 
+      onClick={this.handleClick1}
+      className={this.getButtonColor(numeroDeCliques)}
+      >{numeroDeCliques}</button>
+      
+  
+
+      <button 
+      onClick={this.handleClick2}
+      className={this.getButtonColor(numeroDeCliques2)}
+      >{numeroDeCliques2}</button>
     </div>
   );
 }
