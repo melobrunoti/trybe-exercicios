@@ -1,0 +1,14 @@
+.pokesquare {
+  display: flex;
+  border: solid 1px grey;
+  width: 45%;
+  border-radius: 10px;
+  margin: 20px;
+  justify-content: space-around;
+  
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
