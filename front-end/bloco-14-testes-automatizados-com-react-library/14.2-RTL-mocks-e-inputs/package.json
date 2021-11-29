@@ -1,0 +1,15 @@
+{
+  "name": "14.2-RTL-mocks-e-inputs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "service.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.0"
+  }
+}
