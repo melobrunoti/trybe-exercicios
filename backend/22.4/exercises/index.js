@@ -1,5 +1,11 @@
 const express = require('express')
+
 const bodyParser = require('body-parser');
+
+const rescue = require('express-rescue');
+
+const simpsonsUtils = require('./fs-util');
+
 
 const app = express();
 
@@ -27,3 +33,33 @@ app.put('/users/:name/":age', (req, res) => {
     res.status(200).json({ "message": `Seu nome e ${name} e você tem ${age} anos de idade` })
 })
 
+// simpsons
+
+app.get('/simpsons', rescue(async (req, res) => {
+
+    const simpsons = await simpsonsUtils.getSimpsons();
+    res.status(200).json(simpsons);
+}));;
+
+app.get('/simpsons/:id', rescue(async (req, res) => {
+    const {id} = req.params
+    const simpsons = await simpsonsUtils.getSimpsons();
+    const simpson = simpsons.find((s) => s.id === id)
+
+    res.status(200).json(simpson);
+}));;
+
+app.post('/simpsons', rescue(async ( req, res) => {
+    const {id, name} = req.body
+    const simpsons = await simpsonsUtils.getSimpsons();
+
+    if(simpsons.some((s) => s.id === id)){
+        return res.status(409).json({"message": "id already exists"})
+    }
+
+    simpsons.push({id, name});
+
+    await simpsonsUtils.setSimpsons(simpsons)
+
+    res.status(204).end();
+}))
