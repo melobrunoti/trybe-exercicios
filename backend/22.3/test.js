@@ -44,3 +44,11 @@ describe('Quando o numero for 0', () => {
     expect(resposta).to.be.equals('neutro')
   });
 });
+
+describe('Quando for passado um parametro que nao e um numero', () => {
+  it('retorna erro',() => {
+    const resposta = magicNumber('a');
+
+    expect(resposta).to.be.equals('o valor deve ser um número');
+  });
+});
