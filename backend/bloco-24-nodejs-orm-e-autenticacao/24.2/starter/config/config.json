@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "melo",
+    "password": "senhateste",
+    "database": "ormday2",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
